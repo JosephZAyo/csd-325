@@ -1,0 +1,40 @@
+x is left to right
+y is top to bottom
+
+FOLLOWING MODIFICATIONS:
+Lake roughly in center of display
+	Water should be a different color (W) and 	blue
+Water cannot be modified
+
+WIDTH is 79
+HEIGHT is 22
+
+WATER WIDTH is 9, GAP OF 35 ON TOP AND BOTTOM
+WATER HEIGHT is 10, GAP 6 OF ON TOP AND BOTTOM
+WATER STARTING POINT is (36,7)
+
+MODIFICATIONS
+- in set following values:
+	WATER = 'W'
+	WATER_START_X = 36
+	WATER_START_Y = 7
+	WATER_WIDTH = 9
+	WATER_HEIGHT = 10
+
+- in def createNewForest():
+	{{after 'for y in range(HEIGHT):'
+	and before 'fi )random.random()... etc
+	}}
+	if (WATER_START_Y <= y <= (WATER_START_Y + WATER_HEIGHT)) and (WATER_START_X <= x <= (WATER_START_X + WATER_WIDTH)):
+		forest[(x,y)] = WATER
+
+- in def displayForest(forest):
+	elif forest[(x,y)] == WATER
+		bext.fg('blue')
+		print(WATER, end=' ')
+
+- in main(), for y in range(forest['height'])
+	if forest[x,y] == WATER
+		nextForest[(x,y)] = WATER
+
+
